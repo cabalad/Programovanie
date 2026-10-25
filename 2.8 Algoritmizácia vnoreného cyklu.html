@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pracovná osnova 45-minútovej témy o algoritmizácii vnoreného cyklu.">
+<title>2.8 Algoritmizácia vnoreného cyklu</title>
+<style>
+:root{color-scheme:light;--bg:#f7f8fa;--fg:#1c2330;--card:#fff;--mut:#5b6678;--acc:#1f6feb;--line:#d9dee7;--note:#fff4d6}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#12161d;--fg:#e6eaf1;--card:#1b212b;--mut:#9aa6b8;--acc:#5aa2ff;--line:#2d3644;--note:#3a3017}}
+:root[data-theme="light"]{color-scheme:light;--bg:#f7f8fa;--fg:#1c2330;--card:#fff;--mut:#5b6678;--acc:#1f6feb;--line:#d9dee7;--note:#fff4d6}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#12161d;--fg:#e6eaf1;--card:#1b212b;--mut:#9aa6b8;--acc:#5aa2ff;--line:#2d3644;--note:#3a3017}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--acc)}.wrap{width:min(100% - 2rem,860px);margin:auto;padding:16px}header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}.muted{color:var(--mut)}h1{font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.2}.tag{padding:2px 9px;border-radius:6px;background:var(--line);font-size:13px}.card,.note{margin:14px 0;padding:14px 17px;border:1px solid var(--line);border-radius:12px;background:var(--card)}.note{background:var(--note);display:none}body.teacher .note{display:block}.mode{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}.mode button{padding:6px 11px;border:0;background:var(--card);color:var(--fg);font:inherit;cursor:pointer}.mode button.on{background:var(--acc);color:#fff}button:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:3px}table{width:100%;border-collapse:collapse}th,td{padding:8px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}.scroll{overflow-x:auto}.sources,footer{margin-top:26px;padding-top:12px;border-top:1px solid var(--line)}footer{color:var(--mut);font-size:14px}
+</style>
+</head>
+<body><div class="wrap">
+<header><span class="muted"><a href="index.html">Prehľad tém</a> › Algoritmus a algoritmizácia › 2.8</span><div><a href="nastavenia.html">Nastavenia vzhľadu</a> · <div class="mode" role="group" aria-label="Zobrazenie"><button class="on" id="student" type="button" aria-pressed="true">Žiak</button><button id="teacher" type="button" aria-pressed="false">Učiteľ</button></div></div></header>
+<h1>2.8 Algoritmizácia vnoreného cyklu</h1><p><span class="tag">1 × 45 min</span> <span class="tag">Pracovná osnova</span></p>
+<div class="card"><strong>Pracovná verzia:</strong> Zatiaľ je pripravená orientačná osnova a časový plán. Konkrétne vysvetlenia, príklady a úlohy doplníme po tvojom spresnení tejto témy.</div>
+<h2>Cieľ hodiny</h2><p>Žiak vysvetlí, ako sa opakovanie môže nachádzať vo vnútri iného opakovania, a trasuje vnútorné kroky pre každé opakovanie vonkajšej časti.</p>
+<h2>Orientačný plán (45 min)</h2><div class="scroll"><table><thead><tr><th>Čas</th><th>Časť hodiny</th><th>Pracovný zámer</th></tr></thead><tbody><tr><td>0–5 min</td><td>Opakovanie</td><td>Trasovať jednoduchý cyklus a pomenovať jeho priebeh.</td></tr><tr><td>5–13 min</td><td>Dve úrovne opakovania</td><td>Rozlíšiť vonkajší a vnútorný cyklus a ich úlohy.</td></tr><tr><td>13–23 min</td><td>Trasovanie</td><td>Sledovať, kedy sa vnútorný cyklus dokončí a začne ďalšie vonkajšie opakovanie.</td></tr><tr><td>23–37 min</td><td>Riadená aktivita</td><td>Vytvoriť tabuľku alebo schému všetkých vykonaných dvojíc krokov.</td></tr><tr><td>37–45 min</td><td>Samostatná kontrola</td><td>Určiť celkový počet krokov a vysvetliť, prečo sa poradie opakuje.</td></tr></tbody></table></div>
+<h2>Priestor na dopracovanie</h2><ul><li>Vhodná vizuálna pomôcka na trasovanie dvojice cyklov.</li><li>Príklad s prehľadnou tabuľkou iterácií.</li><li>Úloha na výpočet počtu vykonaní a kontrolu poradia.</li><li>Rozhodnutie, či sa použije slovný postup, diagram alebo zápis v Pythone.</li></ul>
+<div class="note"><strong>Poznámka pre učiteľa:</strong> Po spresnení zvoliť konkrétny príklad a hĺbku zápisu. Dôraz má byť na trasovaní oboch úrovní bez preskočenia vnútorných krokov. Časový plán je návrh na 45 minút.</div>
+<section class="sources"><h2>Použité zdroje</h2><ul><li>Pracovná osnova vytvorená pre tento výučbový materiál; konkrétne príklady a zápis doplníme po spresnení témy.</li></ul></section>
+<footer><a href="2.7 Algoritmizácia cyklu.html">Späť na 2.7</a> · <a href="index.html">Prehľad tém</a> · <a href="2.9%20Algoritmiz%C3%A1cia%20podprogramov.html">Pokračovať na 2.9</a></footer>
+</div><script>
+const s=document.getElementById("student"),t=document.getElementById("teacher");function mode(isTeacher){document.body.classList.toggle("teacher",isTeacher);s.classList.toggle("on",!isTeacher);t.classList.toggle("on",isTeacher);s.setAttribute("aria-pressed",String(!isTeacher));t.setAttribute("aria-pressed",String(isTeacher))}s.addEventListener("click",()=>mode(false));t.addEventListener("click",()=>mode(true));
+</script><script src="theme.js"></script></body></html>
