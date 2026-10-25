@@ -8,14 +8,27 @@
   <title>Programovanie v Pythone | Výučbové materiály</title>
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #101827;
-      --surface: #182437;
-      --text: #edf3fc;
-      --muted: #b4c2d6;
-      --accent: #83c5ff;
-      --border: #2b3b52;
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --surface: #fff;
+      --text: #1c2330;
+      --muted: #5b6678;
+      --accent: #1f6feb;
+      --border: #d9dee7;
     }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        color-scheme: dark;
+        --bg: #101827;
+        --surface: #182437;
+        --text: #edf3fc;
+        --muted: #b4c2d6;
+        --accent: #83c5ff;
+        --border: #2b3b52;
+      }
+    }
+    :root[data-theme="light"] { color-scheme: light; }
+    :root[data-theme="dark"] { color-scheme: dark; }
     * { box-sizing: border-box; }
     body {
       min-height: 100vh;
@@ -65,7 +78,16 @@
 
     <main>
       <h2>Prednášky</h2>
-      <section class="lessons" aria-label="Zoznam prednášok">         <a class="card" href="2.10%20Algoritmiz%C3%A1cia%20funkci%C3%AD.html">           <div class="card-content">             <span class="tag">Funkcie</span>             <h3>2.10 Algoritmizácia funkcií</h3>             <p>Rozdeľ program na podprogramy, používaj parametre a vracaj výsledky.</p>             <span class="open">Otvoriť prednášku <span aria-hidden="true">→</span></span>           </div>         </a>
+      <section class="lessons" aria-label="Zoznam prednášok">
+        <a class="card" href="2.10%20Algoritmiz%C3%A1cia%20funkci%C3%AD.html">
+          <div class="card-content">
+            <span class="tag">Funkcie</span>
+            <h3>2.10 Algoritmizácia funkcií</h3>
+            <p>Rozdeľ program na podprogramy, používaj parametre a vracaj výsledky.</p>
+            <span class="open">Otvoriť prednášku <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
         <a class="card" href="2.11%20Algoritmus%20triedenia%20(2%C3%9745%20min,%20Python).html">
           <img src="img/SortingAlgoritmus.png" alt="Prehľad algoritmov triedenia" width="900" height="600">
           <div class="card-content">
@@ -88,7 +110,8 @@
       </section>
     </main>
 
-    <footer>Výučbové materiály z programovania · Python</footer>
+    <footer>Výučbové materiály z programovania · Python · <a href="nastavenia.html">Nastavenia vzhľadu</a></footer>
   </div>
+  <script src="theme.js"></script>
 </body>
 </html>

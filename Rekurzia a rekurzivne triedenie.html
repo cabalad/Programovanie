@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rekurzia a rekurzívne triedenie | Výučbová téma</title>
 <style>
-:root{--bg:#f7f8fa;--fg:#1c2330;--card:#fff;--mut:#5b6678;--acc:#1f6feb;--line:#d9dee7;--code:#0f172a;--codefg:#e2e8f0;--tbg:#fff4d6;--tline:#e8c25a}
+:root{color-scheme:light;--bg:#f7f8fa;--fg:#1c2330;--card:#fff;--mut:#5b6678;--acc:#1f6feb;--line:#d9dee7;--code:#0f172a;--codefg:#e2e8f0;--tbg:#fff4d6;--tline:#e8c25a}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#12161d;--fg:#e6eaf1;--card:#1b212b;--mut:#9aa6b8;--acc:#5aa2ff;--line:#2d3644;--code:#0a0e14;--codefg:#e2e8f0;--tbg:#3a3017;--tline:#7a6322}}
+:root[data-theme="light"]{color-scheme:light;--bg:#f7f8fa;--fg:#1c2330;--card:#fff;--mut:#5b6678;--acc:#1f6feb;--line:#d9dee7;--code:#0f172a;--codefg:#e2e8f0;--tbg:#fff4d6;--tline:#e8c25a}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#12161d;--fg:#e6eaf1;--card:#1b212b;--mut:#9aa6b8;--acc:#5aa2ff;--line:#2d3644;--code:#0a0e14;--codefg:#e2e8f0;--tbg:#3a3017;--tline:#7a6322}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
 .w{max-width:900px;margin:0 auto;padding:16px}
@@ -31,6 +33,7 @@ pre{background:var(--code);color:var(--codefg);padding:12px;border-radius:8px;ov
 .copyable-code{margin:8px 0}
 .copy-btn{background:var(--acc);color:#fff;border:0;border-radius:6px;padding:5px 10px;font:inherit;font-size:14px;cursor:pointer}
 .copy-status{min-height:1.5em;margin:2px 0;color:var(--mut);font-size:13px}
+.copy-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}
 .video-card{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;margin:12px 0}
 .video-frame{aspect-ratio:16/9;width:100%;border:0;border-radius:8px;background:#000}
@@ -46,7 +49,7 @@ textarea{width:100%;min-height:110px;background:var(--card);color:var(--fg);bord
 <div class="w">
 <header>
 <span class="crumb">Doplnková téma · Algoritmy a Python</span>
-<div class="mode" role="group" aria-label="Zobrazenie stránky"><button id="student-mode" class="on" type="button" aria-pressed="true">Žiak</button><button id="teacher-mode" type="button" aria-pressed="false">Učiteľ</button></div>
+<div><a href="nastavenia.html">Nastavenia vzhľadu</a> · <div class="mode" role="group" aria-label="Zobrazenie stránky"><button id="student-mode" class="on" type="button" aria-pressed="true">Žiak</button><button id="teacher-mode" type="button" aria-pressed="false">Učiteľ</button></div></div>
 </header>
 <h1>Rekurzia a rekurzívne triedenie</h1>
 <p><span class="tag">2 × 45 min (návrh)</span> <span class="tag">funkcie · rozklad problému · Python</span></p>
@@ -175,7 +178,7 @@ Všetky videá sú v angličtine. Pri úvodnom videu nech žiaci najprv hľadaj�
 
 <h2>Zhrnutie</h2>
 <div class="card">Rekurzívna funkcia potrebuje správny základný prípad a krok, ktorý ju k nemu približuje. Volania sa ukladajú, kým sa nedosiahne základný prípad, a potom sa výsledky vracajú späť. Merge sort a quick sort používajú rekurziu na riešenie menších častí zoznamu.</div>
-<p><a href="2.11%20Algoritmus%20triedenia%20(2%C3%9745%20min%2C%20Python).html">Späť na tému 2.11 – Algoritmus triedenia</a></p>
+<p><a href="2.11%20Algoritmus%20triedenia%20(2%C3%9745%20min%2C%20Python).html">Späť na tému 2.11 – Algoritmus triedenia</a> · <a href="index.html">Prehľad prednášok</a> · <a href="nastavenia.html">Nastavenia vzhľadu</a></p>
 
 <h2>Moje poznámky</h2>
 <label for="notes">Poznámky sa ukladajú iba v tomto prehliadači na tomto zariadení.</label>
@@ -185,12 +188,13 @@ Všetky videá sú v angličtine. Pri úvodnom videu nech žiaci najprv hľadaj�
 <script>
 (function(){
 document.querySelectorAll('pre.python-code').forEach(function(code){
- var wrapper=document.createElement('div'),button=document.createElement('button'),status=document.createElement('p');
- wrapper.className='copyable-code';
+var wrapper=document.createElement('div'),actions=document.createElement('div'),button=document.createElement('button'),editor=document.createElement('a'),status=document.createElement('p');
+wrapper.className='copyable-code';actions.className='copy-actions';
  button.className='copy-btn';button.type='button';button.textContent='Kopírovať kód';
- status.className='copy-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
- code.parentNode.insertBefore(wrapper,code);
- wrapper.appendChild(button);wrapper.appendChild(code);wrapper.appendChild(status);
+editor.href='https://www.programiz.com/python-programming/online-compiler/';editor.target='_blank';editor.rel='noopener noreferrer';editor.textContent='Vyskúšať v online editore';
+status.className='copy-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
+code.parentNode.insertBefore(wrapper,code);
+wrapper.appendChild(actions);actions.appendChild(button);actions.appendChild(editor);wrapper.appendChild(code);wrapper.appendChild(status);
  button.onclick=function(){
   if(!navigator.clipboard||!navigator.clipboard.writeText){
    status.textContent='Kopírovanie nie je dostupné. Označ kód a skopíruj ho pomocou Ctrl+C.';
@@ -220,5 +224,6 @@ notes.oninput=function(){
 };
 })();
 </script>
+<script src="theme.js"></script>
 </body>
 </html>
