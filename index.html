@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101827">
-  <meta name="description" content="Výučbové materiály k algoritmom, vývojovým diagramom, podmienkam, cyklom, podprogramom, funkciám, triedeniu a rekurzii.">
+  <meta name="description" content="Výučbové materiály k programovaniu v Pythone, algoritmom, programovacím jazykom, OOP, vývojovým diagramom a dátovým štruktúram.">
   <title>Programovanie v Pythone | Výučbové materiály</title>
   <style>
     :root {
@@ -52,6 +52,7 @@
     header p { max-width: 600px; margin: 1rem auto 0; color: var(--muted); font-size: 1.1rem; }
     h2 { margin: 0 0 1.25rem; font-size: 1.45rem; }
     .lessons { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.25rem; padding-bottom: 4rem; }
+    .section-heading { grid-column: 1 / -1; margin: 1rem 0 0; padding-top: 1rem; border-top: 1px solid var(--border); }
     .card {
       display: flex;
       min-width: 0;
@@ -248,13 +249,35 @@
             <span class="open">Otvoriť prednášku <span aria-hidden="true">→</span></span>
           </div>
         </a>
+
+        <h2 class="section-heading">3. Programovanie všeobecne</h2>
+
+        <a class="card" href="3.1%20Programovacie%20jazyky%20a%20ich%20delenie.html">
+          <img src="img/3.1%20Programovacie%20jazyky.svg" alt="Programovacie jazyky rozdelené podľa úrovne abstrakcie, vykonávania a paradigmy" loading="lazy">
+          <div class="card-content">
+            <span class="tag">Základy programovania</span>
+            <h3>3.1 Programovacie jazyky a ich delenie</h3>
+            <p>Úrovne jazykov, spôsoby vykonávania, paradigmy a oblasti použitia · 45 min.</p>
+            <span class="open">Otvoriť tému <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="card" href="3.2%20Jazyky%20vy%C5%A1%C5%A1ieho%20typu.html">
+          <img src="img/3.2%20Trieda%20a%20objekty.svg" alt="Trieda GameObject opisuje atribúty a metódy spoločné pre viac objektov" loading="lazy">
+          <div class="card-content">
+            <span class="tag">Vyššie jazyky a OOP</span>
+            <h3>3.2 Jazyky vyššieho typu</h3>
+            <p>Vyššie jazyky a objektovo orientované programovanie v Pythone · 2 × 45 min.</p>
+            <span class="open">Otvoriť tému <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
       </section>
     </main>
 
     <section class="card" aria-labelledby="sources-heading">
       <h2 id="sources-heading">Použité zdroje</h2>
       <ul>
-        <li><a href="1.1%20Bezpe%C4%8Dnos%C5%A5%20pri%20pr%C3%A1ci.html">téma 1.1</a> a <a href="1.2%20Vstup%20do%20predmetu.html">1.2</a>; témy <a href="2.1%20Algoritmus%20-%20z%C3%A1kladn%C3%A9%20pojmy,%20vlastnosti%20algoritmov.html">2.1</a>, <a href="2.2%20Z%C3%A1kladn%C3%A9%20formy%20a%20typy%20algoritmov.html">2.2</a>, <a href="2.3%20V%C3%BDvojov%C3%BD%20diagram.html">2.3</a>, <a href="2.4%20Algoritmiz%C3%A1cia%20v%C3%BDpo%C4%8Dtu%20pl%C3%B4ch%20a%20objemov.html">2.4</a>, <a href="2.5%20Algoritmiz%C3%A1cia%20podmienky.html">2.5</a>, <a href="2.6%20Algoritmiz%C3%A1cia%20vnorenej%20podmienky.html">2.6</a>, <a href="2.7%20Algoritmiz%C3%A1cia%20cyklu.html">2.7</a> a <a href="2.8%20Algoritmiz%C3%A1cia%20vnoren%C3%A9ho%20cyklu.html">2.8</a>; nadväzujúce témy <a href="2.9%20Algoritmiz%C3%A1cia%20podprogramov.html">2.9</a>, <a href="2.10%20Algoritmiz%C3%A1cia%20funkci%C3%AD.html">2.10</a>, <a href="2.11%20Algoritmus%20triedenia.html">2.11</a> a <a href="2.11.1%20Rekurzia%20a%20rekurzivne%20triedenie.html">2.11.1</a>.</li>
+        <li><a href="1.1%20Bezpe%C4%8Dnos%C5%A5%20pri%20pr%C3%A1ci.html">téma 1.1</a> a <a href="1.2%20Vstup%20do%20predmetu.html">1.2</a>; témy <a href="2.1%20Algoritmus%20-%20z%C3%A1kladn%C3%A9%20pojmy,%20vlastnosti%20algoritmov.html">2.1</a>, <a href="2.2%20Z%C3%A1kladn%C3%A9%20formy%20a%20typy%20algoritmov.html">2.2</a>, <a href="2.3%20V%C3%BDvojov%C3%BD%20diagram.html">2.3</a>, <a href="2.4%20Algoritmiz%C3%A1cia%20v%C3%BDpo%C4%8Dtu%20pl%C3%B4ch%20a%20objemov.html">2.4</a>, <a href="2.5%20Algoritmiz%C3%A1cia%20podmienky.html">2.5</a>, <a href="2.6%20Algoritmiz%C3%A1cia%20vnorenej%20podmienky.html">2.6</a>, <a href="2.7%20Algoritmiz%C3%A1cia%20cyklu.html">2.7</a> a <a href="2.8%20Algoritmiz%C3%A1cia%20vnoren%C3%A9ho%20cyklu.html">2.8</a>; nadväzujúce témy <a href="2.9%20Algoritmiz%C3%A1cia%20podprogramov.html">2.9</a>, <a href="2.10%20Algoritmiz%C3%A1cia%20funkci%C3%AD.html">2.10</a>, <a href="2.11%20Algoritmus%20triedenia.html">2.11</a>, <a href="2.11.1%20Rekurzia%20a%20rekurzivne%20triedenie.html">2.11.1</a>, <a href="3.1%20Programovacie%20jazyky%20a%20ich%20delenie.html">3.1</a> a <a href="3.2%20Jazyky%20vy%C5%A1%C5%A1ieho%20typu.html">3.2</a>.</li>
         <li>Ilustrácie prednášok: súbory dodané k týmto výučbovým materiálom v priečinku <code>img</code>.</li>
         <li>Ilustrácia k téme funkcií: <a href="https://data-flair.training/blogs/python-function/" target="_blank" rel="noopener noreferrer">DataFlair – Python Function: Type of Functions in Python</a>.</li>
       </ul>
