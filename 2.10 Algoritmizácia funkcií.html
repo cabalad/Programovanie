@@ -40,6 +40,12 @@ pre{background:var(--code);color:var(--codefg);padding:12px;border-radius:8px;ov
 .video-card h3{margin:4px 0 8px;font-size:1.05rem}
 .video-card p{margin:.5rem 0}
 .callout{border-left:4px solid var(--acc);padding:8px 14px;background:var(--card)}
+.diagram{margin:18px 0;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram figcaption{margin-top:8px;color:var(--mut);font-size:14px}
+.sources{margin-top:20px;padding:14px 18px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.sources h2{margin-top:0}
+.sources li{margin:.35rem 0}
 table{border-collapse:collapse;width:100%}
 th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
 .tw{overflow-x:auto}
@@ -88,6 +94,27 @@ Nechajte žiakov najprv vyriešiť jednoduchú úlohu ručne a potom porovnajte 
 <li><strong>Jednoduchšie testovanie a opravy:</strong> menšiu časť vieme overiť samostatne.</li>
 <li><strong>Rozdelenie práce:</strong> väčší problém rozdelíme medzi menšie funkcie.</li>
 </ul>
+<figure class="diagram">
+<svg viewBox="0 0 760 290" role="img" aria-labelledby="function-map-title function-map-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="function-map-title">Typy funkcií v Pythone</title>
+<desc id="function-map-desc">Funkcie rozdeľujeme na vstavané funkcie, ako print a len, a používateľom vytvorené funkcie, ako sucet. Obe zavoláme menom a podľa účelu odovzdáme argumenty.</desc>
+<defs><marker id="arrow-functions" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#1f6feb"/></marker></defs>
+<rect x="16" y="16" width="728" height="258" rx="18" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/>
+<text x="380" y="54" text-anchor="middle" fill="var(--fg)" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Funkcie v Pythone</text>
+<path d="M380 68v24M380 92H200v20M380 92h180v20" fill="none" stroke="#1f6feb" stroke-width="3"/>
+<rect x="54" y="112" width="292" height="116" rx="14" fill="var(--card)" stroke="#1f6feb" stroke-width="2"/>
+<rect x="414" y="112" width="292" height="116" rx="14" fill="var(--card)" stroke="#1f6feb" stroke-width="2"/>
+<text x="200" y="146" text-anchor="middle" fill="var(--fg)" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Vstavané funkcie</text>
+<text x="200" y="177" text-anchor="middle" fill="var(--fg)" font-family="ui-monospace,monospace" font-size="17">print("Ahoj")</text>
+<text x="200" y="205" text-anchor="middle" fill="var(--mut)" font-family="system-ui,sans-serif" font-size="14">len([2, 4, 6]) → 3</text>
+<text x="560" y="146" text-anchor="middle" fill="var(--fg)" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Vlastné funkcie</text>
+<text x="560" y="177" text-anchor="middle" fill="var(--fg)" font-family="ui-monospace,monospace" font-size="17">sucet(5, 7)</text>
+<text x="560" y="205" text-anchor="middle" fill="var(--mut)" font-family="system-ui,sans-serif" font-size="14">definujeme ich pomocou def</text>
+<path d="M200 230v18h360v-18" fill="none" stroke="#1f6feb" stroke-width="3" marker-end="url(#arrow-functions)"/>
+<text x="380" y="267" text-anchor="middle" fill="var(--mut)" font-family="system-ui,sans-serif" font-size="14">Volaním funkcie vykonáme jej úlohu</text>
+</svg>
+<figcaption>Vlastná schéma: vstavané funkcie sú pripravené v Pythone, vlastné funkcie vytvára programátor podľa úlohy.</figcaption>
+</figure>
 <div class="video-grid">
 <div class="video-card">
 <h3>Video 1: funkcie v Pythone</h3>
@@ -105,6 +132,26 @@ Nechajte žiakov najprv vyriešiť jednoduchú úlohu ručne a potom porovnajte 
 
 <h3>Vytvorenie a volanie funkcie</h3>
 <p>V Pythone sa funkcia začína kľúčovým slovom <code>def</code>. Telo funkcie je odsadené. Funkcia sa vykoná až vtedy, keď ju zavoláme jej menom.</p>
+<figure class="diagram">
+<svg viewBox="0 0 760 210" role="img" aria-labelledby="function-flow-title function-flow-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="function-flow-title">Ako prechádza hodnota cez funkciu</title>
+<desc id="function-flow-desc">Hodnoty 5 a 7 sa odovzdajú ako argumenty do funkcie sucet, funkcia vypočíta ich súčet a return vráti hodnotu 12.</desc>
+<defs><marker id="arrow-flow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#1f6feb"/></marker></defs>
+<rect x="16" y="16" width="728" height="178" rx="18" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/>
+<rect x="42" y="69" width="142" height="70" rx="12" fill="var(--card)" stroke="#1f6feb" stroke-width="2"/>
+<rect x="249" y="54" width="250" height="100" rx="14" fill="var(--card)" stroke="#1f6feb" stroke-width="2"/>
+<rect x="564" y="69" width="152" height="70" rx="12" fill="var(--card)" stroke="#1f6feb" stroke-width="2"/>
+<text x="113" y="97" text-anchor="middle" fill="var(--mut)" font-family="system-ui,sans-serif" font-size="14">argumenty</text>
+<text x="113" y="124" text-anchor="middle" fill="var(--fg)" font-family="ui-monospace,monospace" font-size="18">5 a 7</text>
+<text x="374" y="90" text-anchor="middle" fill="var(--fg)" font-family="ui-monospace,monospace" font-size="18">sucet(a, b)</text>
+<text x="374" y="119" text-anchor="middle" fill="var(--mut)" font-family="system-ui,sans-serif" font-size="15">vypočíta a + b</text>
+<text x="640" y="97" text-anchor="middle" fill="var(--mut)" font-family="system-ui,sans-serif" font-size="14">return</text>
+<text x="640" y="124" text-anchor="middle" fill="var(--fg)" font-family="ui-monospace,monospace" font-size="18">12</text>
+<path d="M188 104h50M503 104h52" fill="none" stroke="#1f6feb" stroke-width="3" marker-end="url(#arrow-flow)"/>
+<text x="374" y="177" text-anchor="middle" fill="var(--mut)" font-family="system-ui,sans-serif" font-size="14">vstup → spracovanie → návratová hodnota</text>
+</svg>
+<figcaption>Vlastná schéma volania funkcie: argumenty vstupujú do funkcie a <code>return</code> odovzdá výsledok späť.</figcaption>
+</figure>
 <pre><code>def sucet(a, b):
     return a + b
 
@@ -264,6 +311,16 @@ Pri obsahu obdĺžnika <code>obsah_obdlznika(4, 5)</code> vráti 20. Funkcia <co
 </ol>
 <div class="card"><strong>Projekt č. 2:</strong> Na prvý riadok pridaj komentár <code># Funkcie som pochopil a viem ich použiť</code>, alebo napíš, ktorú časť potrebuješ podrobnejšie vysvetliť. Pod komentár vytvor vlastný krátky program s aspoň dvoma funkciami a otestuj ich.</div>
 
+<section class="sources" aria-labelledby="sources-heading">
+<h2 id="sources-heading">Použité zdroje</h2>
+<ul>
+<li><a href="https://data-flair.training/blogs/python-function/" target="_blank" rel="noopener noreferrer">DataFlair: Python Function – Type of Functions in Python</a> – odporúčané čítanie k vstavaným a používateľským funkciám; schémy v tejto stránke sú vytvorené nanovo.</li>
+<li><a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions" target="_blank" rel="noopener noreferrer">Oficiálny tutoriál Pythonu: Defining Functions</a>.</li>
+<li><a href="https://docs.python.org/3/library/typing.html" target="_blank" rel="noopener noreferrer">Oficiálna dokumentácia Pythonu: typing</a>.</li>
+<li><a href="https://youtu.be/3sim8jgkpTU" target="_blank" rel="noopener noreferrer">Video na zopakovanie algoritmov</a>; <a href="https://youtu.be/89cGQjB5R4M" target="_blank" rel="noopener noreferrer">video o funkciách</a>; <a href="https://youtu.be/KW6qncswzHw" target="_blank" rel="noopener noreferrer">video o parametroch</a>; <a href="https://youtu.be/vg7Hwd9TANY" target="_blank" rel="noopener noreferrer">video o použití funkcií</a>.</li>
+<li><a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank" rel="noopener noreferrer">Programiz Python Online Compiler</a> – online spustenie ukážok.</li>
+</ul>
+</section>
 <footer><a href="index.html">Späť na prehľad prednášok</a> · <a href="nastavenia.html">Nastavenia vzhľadu</a></footer>
 </div>
 <script>
