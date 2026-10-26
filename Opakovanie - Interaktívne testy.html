@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Dva interaktívne testy na opakovanie algoritmov a základov programovacieho jazyka C.">
+<title>Opakovanie – Interaktívne testy</title>
+<style>
+:root{color-scheme:light;--bg:#f7f8fa;--fg:#1c2330;--card:#fff;--mut:#5b6678;--acc:#1f6feb;--line:#d9dee7;--ok:#18743a;--bad:#b42318;--okbg:#e9f7ee;--badbg:#fff0ee}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#12161d;--fg:#e6eaf1;--card:#1b212b;--mut:#9aa6b8;--acc:#5aa2ff;--line:#2d3644;--ok:#63d58a;--bad:#ff8178;--okbg:#153522;--badbg:#3a201f}}
+:root[data-theme="light"]{color-scheme:light;--bg:#f7f8fa;--fg:#1c2330;--card:#fff;--mut:#5b6678;--acc:#1f6feb;--line:#d9dee7;--ok:#18743a;--bad:#b42318;--okbg:#e9f7ee;--badbg:#fff0ee}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#12161d;--fg:#e6eaf1;--card:#1b212b;--mut:#9aa6b8;--acc:#5aa2ff;--line:#2d3644;--ok:#63d58a;--bad:#ff8178;--okbg:#153522;--badbg:#3a201f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--acc)}.wrap{width:min(100% - 2rem,900px);margin:auto;padding:16px}header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}.muted{color:var(--mut)}h1{font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.2}.lead{color:var(--mut)}.quiz{margin:2rem 0;padding:1.25rem;border:1px solid var(--line);border-radius:12px;background:var(--card)}.question{margin:1rem 0;padding:1rem;border:1px solid var(--line);border-radius:10px}.question legend{padding:0 .35rem;font-weight:700}.answers{display:grid;gap:.45rem}.answers label{display:flex;align-items:flex-start;gap:.55rem;cursor:pointer}.answers input{margin-top:.4rem;accent-color:var(--acc)}.feedback{min-height:1.5em;margin:.7rem 0 0;font-size:.95rem}.feedback.correct{color:var(--ok)}.feedback.incorrect{color:var(--bad)}.quiz-result{min-height:1.7em;font-weight:700}.quiz-result[data-state="ok"]{color:var(--ok)}.quiz-result[data-state="error"]{color:var(--bad)}button{padding:.65rem 1rem;border:0;border-radius:8px;background:var(--acc);color:#fff;font:inherit;font-weight:700;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:3px}.quiz-help{color:var(--mut)}footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+</style>
+<script src="theme.js" defer></script>
+</head>
+<body>
+<main class="wrap">
+<header><span class="muted"><a href="index.html">Prehľad tém</a> › 4. Opakovanie</span><a href="nastavenia.html">Nastavenia vzhľadu</a></header>
+<h1>Interaktívne testy</h1>
+<p class="lead">Vyber odpoveď pri každej otázke a samostatne vyhodnoť každý test. Po vyhodnotení sa zobrazí skóre aj vysvetlenie správnych odpovedí.</p>
+
+<form class="quiz" data-quiz="algorithms">
+  <h2>Test 1: Algoritmy</h2>
+  <p class="quiz-help">Otázky vychádzajú z podkladu <a href="Opakovanie%20-%20Z%C3%A1klady%20algoritmov%20a%20jazyka%20C.html#algorithms-heading">Príklady algoritmov</a>.</p>
+  <fieldset class="question" data-answer="b" data-explanation="Algoritmus je konečný a presne určený postup, ktorý premieňa vstupy na požadovaný výstup."><legend>1. Čo najlepšie vystihuje algoritmus?</legend><div class="answers"><label><input type="radio" name="alg-1" value="a"> Ľubovoľný programovací jazyk</label><label><input type="radio" name="alg-1" value="b"> Konečný a presný postup krokov na riešenie úlohy</label><label><input type="radio" name="alg-1" value="c"> Zoznam údajov uložených v počítači</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="c" data-explanation="Podklad uvádza formuláciu zadania, analýzu a zostavenie algoritmu."><legend>2. V akom poradí prebieha algoritmizácia úlohy?</legend><div class="answers"><label><input type="radio" name="alg-2" value="a"> Zostavenie algoritmu, formulácia, analýza</label><label><input type="radio" name="alg-2" value="b"> Analýza, zostavenie algoritmu, formulácia</label><label><input type="radio" name="alg-2" value="c"> Formulácia, analýza, zostavenie algoritmu</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="a" data-explanation="Pri determinovanosti musí byť každý krok jednoznačný a presne definovaný."><legend>3. Čo znamená determinovanosť algoritmu?</legend><div class="answers"><label><input type="radio" name="alg-3" value="a"> V každom kroku je jednoznačné, čo sa má vykonať</label><label><input type="radio" name="alg-3" value="b"> Algoritmus vždy používa rovnaký programovací jazyk</label><label><input type="radio" name="alg-3" value="c"> Algoritmus musí mať presne desať krokov</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="b" data-explanation="Všeobecný algoritmus rieši triedu podobných úloh, nie jediný konkrétny prípad."><legend>4. Čo vyjadruje všeobecnosť algoritmu?</legend><div class="answers"><label><input type="radio" name="alg-4" value="a"> Rieši iba jeden konkrétny príklad</label><label><input type="radio" name="alg-4" value="b"> Rieši celú triedu podobných úloh</label><label><input type="radio" name="alg-4" value="c"> Musí byť zapísaný iba obrázkom</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="c" data-explanation="Vývojový diagram zobrazuje algoritmus pomocou grafických značiek a spojníc."><legend>5. Čím sa graficky zapisuje algoritmus pomocou značiek a spojníc?</legend><div class="answers"><label><input type="radio" name="alg-5" value="a"> Tabuľkou premenných</label><label><input type="radio" name="alg-5" value="b"> Hlavičkovým súborom</label><label><input type="radio" name="alg-5" value="c"> Vývojovým diagramom</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="a" data-explanation="Rozhodovací blok má jeden vstup a viac výstupov; vetvenie vyberá cestu podľa podmienky."><legend>6. Na čo slúži rozhodovací blok vo vývojovom diagrame?</legend><div class="answers"><label><input type="radio" name="alg-6" value="a"> Na výber ďalšej cesty podľa podmienky</label><label><input type="radio" name="alg-6" value="b"> Na označenie každého komentára</label><label><input type="radio" name="alg-6" value="c"> Na uloženie programu do súboru</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="b" data-explanation="Základné riadiace štruktúry sú sekvenčnosť, binárne vetvenie a cyklus."><legend>7. Ktorá možnosť obsahuje tri základné riadiace štruktúry?</legend><div class="answers"><label><input type="radio" name="alg-7" value="a"> Deklarácia, kompilácia, ladenie</label><label><input type="radio" name="alg-7" value="b"> Sekvenčnosť, binárne vetvenie, cyklus</label><label><input type="radio" name="alg-7" value="c"> Vstup, tlač, uloženie</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="c" data-explanation="Pri cykle s podmienkou na začiatku sa podmienka testuje pred telom, preto telo môže zostať nevykonané."><legend>8. Čo platí pre cyklus s podmienkou na začiatku?</legend><div class="answers"><label><input type="radio" name="alg-8" value="a"> Telo sa vykoná vždy aspoň raz</label><label><input type="radio" name="alg-8" value="b"> Počet opakovaní je vždy presne dva</label><label><input type="radio" name="alg-8" value="c"> Ak podmienka na začiatku neplatí, telo sa nemusí vykonať ani raz</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="a" data-explanation="Pri cykle s podmienkou na konci sa telo vykoná pred prvým testom, teda minimálne raz."><legend>9. Ktorý cyklus sa vykoná aspoň raz pred prvou kontrolou podmienky?</legend><div class="answers"><label><input type="radio" name="alg-9" value="a"> Cyklus s podmienkou na konci</label><label><input type="radio" name="alg-9" value="b"> Cyklus s podmienkou na začiatku</label><label><input type="radio" name="alg-9" value="c"> Sekvenčnosť</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="b" data-explanation="Pri cykle s pevným počtom opakovaní je počet vykonaní určený explicitne."><legend>10. Čím sa vyznačuje cyklus s pevným počtom opakovaní?</legend><div class="answers"><label><input type="radio" name="alg-10" value="a"> Nikdy nemá telo</label><label><input type="radio" name="alg-10" value="b"> Počet opakovaní je určený vopred</label><label><input type="radio" name="alg-10" value="c"> Končí sa iba po vypnutí počítača</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <p class="quiz-result" role="status" aria-live="polite"></p>
+  <button type="submit">Vyhodnotiť test z algoritmov</button>
+  <button type="reset">Vynulovať test</button>
+</form>
+
+<form class="quiz" data-quiz="c-language">
+  <h2>Test 2: Programovací jazyk C</h2>
+  <p class="quiz-help">Otázky vychádzajú z podkladu <a href="Opakovanie%20-%20Z%C3%A1klady%20algoritmov%20a%20jazyka%20C.html#c-heading">Základy jazyka C</a>.</p>
+  <fieldset class="question" data-answer="b" data-explanation="Zdrojový súbor .c sa prekladá kompilátorom na strojový kód v spustiteľnom súbore."><legend>1. Ako sa podľa podkladu spracuje zdrojový súbor jazyka C?</legend><div class="answers"><label><input type="radio" name="c-1" value="a"> Spustí sa priamo bez prekladu</label><label><input type="radio" name="c-1" value="b"> Kompilátor ho preloží na strojový kód</label><label><input type="radio" name="c-1" value="c"> Zmení sa na PDF dokument</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="c" data-explanation="V každom programe v C má byť práve jedna funkcia main; vykonávanie sa začína v nej."><legend>2. Ktorá funkcia je vstupným bodom programu v C?</legend><div class="answers"><label><input type="radio" name="c-2" value="a"> printf</label><label><input type="radio" name="c-2" value="b"> start</label><label><input type="radio" name="c-2" value="c"> main</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="a" data-explanation="Hlavičkový súbor stdio.h obsahuje deklarácie vstupno-výstupných funkcií, napríklad printf."><legend>3. Ktorý hlavičkový súbor sa v materiáli pripája pre printf a vstupno-výstupné funkcie?</legend><div class="answers"><label><input type="radio" name="c-3" value="a"> stdio.h</label><label><input type="radio" name="c-3" value="b"> main.c</label><label><input type="radio" name="c-3" value="c"> loop.h</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="b" data-explanation="V jazyku C sa bodkočiarka píše na konci takmer každého príkazu."><legend>4. Čo sa v jazyku C zvyčajne píše na koniec príkazu?</legend><div class="answers"><label><input type="radio" name="c-4" value="a"> Dvojbodka</label><label><input type="radio" name="c-4" value="b"> Bodkočiarka</label><label><input type="radio" name="c-4" value="c"> Otváracia zložená zátvorka</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="c" data-explanation="Pri scanf sa pred identifikátor premennej uvádza &, aby funkcia dostala jej adresu."><legend>5. Čo sa uvádza pred názvom premennej v scanf?</legend><div class="answers"><label><input type="radio" name="c-5" value="a"> #</label><label><input type="radio" name="c-5" value="b"> %</label><label><input type="radio" name="c-5" value="c"> &amp;</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="a" data-explanation="V jazyku C má nepravda číselnú hodnotu nula a pravda nenulovú hodnotu."><legend>6. Ako sú v podklade opísané pravdivostné hodnoty v C?</legend><div class="answers"><label><input type="radio" name="c-6" value="a"> Nula znamená nepravdu, nenulová hodnota pravdu</label><label><input type="radio" name="c-6" value="b"> Nula aj nenulové hodnoty znamenajú nepravdu</label><label><input type="radio" name="c-6" value="c"> Pravda je vždy presne číslo 2</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="b" data-explanation="Vetvenie if-else vyberie blok podľa toho, či je výraz pravdivý alebo nepravdivý."><legend>7. Na čo slúži konštrukcia if-else?</legend><div class="answers"><label><input type="radio" name="c-7" value="a"> Na definovanie hlavičkového súboru</label><label><input type="radio" name="c-7" value="b"> Na výber medzi vetvami podľa pravdivosti výrazu</label><label><input type="radio" name="c-7" value="c"> Na automatické pomenovanie premennej</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="c" data-explanation="Pri while sa podmienka kontroluje pred telom, preto telo môže vykonať nula opakovaní."><legend>8. Čo platí pre cyklus while?</legend><div class="answers"><label><input type="radio" name="c-8" value="a"> Podmienka sa kontroluje až po prvom vykonaní tela</label><label><input type="radio" name="c-8" value="b"> Vykoná sa vždy presne raz</label><label><input type="radio" name="c-8" value="c"> Podmienka sa kontroluje pred telom, ktoré sa nemusí vykonať ani raz</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="a" data-explanation="Pri do-while sa podmienka testuje po prvom vykonaní tela cyklu."><legend>9. Čím sa od while líši do-while?</legend><div class="answers"><label><input type="radio" name="c-9" value="a"> Podmienka sa kontroluje po tele, takže telo sa vykoná aspoň raz</label><label><input type="radio" name="c-9" value="b"> Nemá podmienku</label><label><input type="radio" name="c-9" value="c"> Je určený iba na definovanie funkcií</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="b" data-explanation="Cyklus for sa používa, keď počet opakovaní poznáme alebo ho vieme vopred stanoviť."><legend>10. Kedy je vhodný cyklus for podľa podkladu?</legend><div class="answers"><label><input type="radio" name="c-10" value="a"> Keď nikdy nechceme vykonať telo cyklu</label><label><input type="radio" name="c-10" value="b"> Keď vieme vopred stanoviť počet opakovaní</label><label><input type="radio" name="c-10" value="c"> Iba pri volaní printf</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="c" data-explanation="break ukončí riadiacu štruktúru; continue preskočí zvyšok aktuálneho priebehu cyklu a pokračuje ďalším testom."><legend>11. Aký je rozdiel medzi break a continue v cykle?</legend><div class="answers"><label><input type="radio" name="c-11" value="a"> Oba ukončia celý program</label><label><input type="radio" name="c-11" value="b"> break preskočí jeden príkaz a continue ukončí funkciu</label><label><input type="radio" name="c-11" value="c"> break opustí cyklus, continue preskočí zvyšok aktuálneho priebehu</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="a" data-explanation="V switch sa vyberá case podľa hodnoty výrazu; default je voliteľná vetva, ak sa žiadny case nezhoduje."><legend>12. Na čo slúži vetva default v príkaze switch?</legend><div class="answers"><label><input type="radio" name="c-12" value="a"> Na vykonanie predvolenej vetvy, ak sa nezhoduje žiadny case</label><label><input type="radio" name="c-12" value="b"> Na ukončenie každej funkcie</label><label><input type="radio" name="c-12" value="c"> Na deklarovanie globálnej premennej</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <fieldset class="question" data-answer="b" data-explanation="Hlavička funkcie obsahuje návratový typ, názov a parametre; return odovzdá výsledok."><legend>13. Čo vystihuje návratovú hodnotu funkcie?</legend><div class="answers"><label><input type="radio" name="c-13" value="a"> Je to názov zdrojového súboru</label><label><input type="radio" name="c-13" value="b"> Výsledok funkcie, ktorý môže odovzdať príkaz return</label><label><input type="radio" name="c-13" value="c"> Vždy ide o text vypísaný cez printf</label></div><p class="feedback" aria-live="polite"></p></fieldset>
+  <p class="quiz-result" role="status" aria-live="polite"></p>
+  <button type="submit">Vyhodnotiť test z jazyka C</button>
+  <button type="reset">Vynulovať test</button>
+</form>
+
+<footer><a href="index.html">Späť na prehľad</a> · <a href="Opakovanie%20-%20Z%C3%A1klady%20algoritmov%20a%20jazyka%20C.html">Otvoriť celé študijné podklady</a></footer>
+</main>
+<script>
+document.querySelectorAll(".quiz").forEach(function (quiz) {
+  quiz.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var questions = Array.from(quiz.querySelectorAll(".question"));
+    var unanswered = questions.filter(function (question) {
+      return !question.querySelector("input:checked");
+    });
+    var result = quiz.querySelector(".quiz-result");
+
+    if (unanswered.length) {
+      result.textContent = "Odpovedz ešte na " + unanswered.length + (unanswered.length === 1 ? " otázku." : " otázok.");
+      result.dataset.state = "error";
+      unanswered[0].querySelector("input").focus();
+      return;
+    }
+
+    var score = 0;
+    questions.forEach(function (question) {
+      var selected = question.querySelector("input:checked");
+      var correct = selected.value === question.dataset.answer;
+      var feedback = question.querySelector(".feedback");
+      var correctOption = question.querySelector('input[value="' + question.dataset.answer + '"]');
+      var correctLabel = correctOption.closest("label").textContent.trim();
+
+      if (correct) {
+        score += 1;
+      }
+      feedback.textContent = correct
+        ? "Správne. " + question.dataset.explanation
+        : "Nesprávne. Správna odpoveď: " + correctLabel + ". " + question.dataset.explanation;
+      feedback.classList.toggle("correct", correct);
+      feedback.classList.toggle("incorrect", !correct);
+    });
+
+    var percentage = Math.round(score / questions.length * 100);
+    result.textContent = "Výsledok: " + score + " z " + questions.length + " (" + percentage + " %).";
+    result.dataset.state = score === questions.length ? "ok" : "";
+  });
+
+  quiz.addEventListener("reset", function () {
+    window.setTimeout(function () {
+      quiz.querySelectorAll(".feedback").forEach(function (feedback) {
+        feedback.textContent = "";
+        feedback.classList.remove("correct", "incorrect");
+      });
+      var result = quiz.querySelector(".quiz-result");
+      result.textContent = "";
+      result.removeAttribute("data-state");
+    }, 0);
+  });
+});
+</script>
+</body>
+</html>
