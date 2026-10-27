@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurz C / C++</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" style="color: #38bdf8; text-decoration: none; font-weight: 600;">&larr; Všetky kurzy</a>
+
+        <header style="text-align: left; margin-top: 1.5rem; margin-bottom: 2rem;">
+            <h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #00599c, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Programovacie Jazyky C a C++</h1>
+            <p style="margin: 0; max-width: 100%;">Od správneho pochopenia adresovania a ukazovateľov v C až po pokročilý objektový návrh v C++.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+            <!-- Sekcia C -->
+            <section style="background-color: var(--bg-card); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                <h2 style="margin-bottom: 1rem; color: #38bdf8;">⚙️ Jazyk C (Procedurálne)</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Nízkoprofilové procedurálne programovanie, pamäť a ukazovatele.</p>
+                <ul style="margin-left: 1.5rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+                    <li>Štruktúra C programu, preprocesor a funkcia <code>main</code>.</li>
+                    <li>Ukazovatele (pointers), dereferencia a adresa <code>&</code>.</li>
+                    <li>Dynamická alokácia pamäte (malloc, free) na halde.</li>
+                    <li>Štruktúry (struct) a modulárny vývoj (.h súbory).</li>
+                </ul>
+                <a href="02_C/README.md" class="card-btn" style="background-color: #00599c;">Otvoriť kurz C &rarr;</a>
+            </section>
+
+            <!-- Sekcia C++ -->
+            <section style="background-color: var(--bg-card); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+                <h2 style="margin-bottom: 1rem; color: #818cf8;">🧩 Jazyk C++ (Objektový návrh)</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Moderné C++ (C++17), abstrakcia, OOP, RAII a STL kontajnery.</p>
+                <ul style="margin-left: 1.5rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+                    <li>Triedy, konštruktory, deštruktory a zapuzdrenie.</li>
+                    <li>Dedičnosť, polymorfizmus a <code>virtual</code> metódy.</li>
+                    <li>STL kontajnery (std::vector, std::string) a algoritmy.</li>
+                    <li>Bezpečná správa pamäte cez smart pointery a RAII.</li>
+                </ul>
+                <a href="03_C++/README.md" class="card-btn" style="background-color: #4f46e5;">Otvoriť kurz C++ &rarr;</a>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
