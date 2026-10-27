@@ -1,26 +1,59 @@
-# Modul 03: C++ – Objektovo Orientované Programovanie (OOP)
+# Modul 03: C++ – Objektovo Orientované Programovanie a Moderné C++
 
-Vítajte v štvrtom module. Jazyk **C++** stavia na základoch jazyka C a prináša paradigma **objektovo orientovaného programovania (OOP)**, šablóny (templates) a štandardnú knižnicu STL.
+Vítajte v štvrtom module. Jazyk **C++** stavia na základoch jazyka C a prináša paradigma **Objektovo Orientovaného Programovania (OOP)**, silnú typovú kontrolu, abstrakciu, šablóny (templates) a Štandardnú knižnicu šablón (**STL**).
+
+V modernom C++ (C++17) sa kladie dôraz na bezpečnosť pamäte, čitateľnosť, princíp **RAII** (*Resource Acquisition Is Initialization*) a používanie smart pointerov namiesto manuálnej správy pamäte.
 
 ---
 
-## 🎯 Ciele modulu
+## 🎯 Vzdelávacie ciele
 Po absolvovaní tohto modulu budete vedieť:
 - Rozumieť základy paradigmy OOP: **Puzdrenie (Encapsulation)**, **Dedičnosť (Inheritance)** a **Polymorfizmus (Polymorphism)**.
-- Vytvárať vlastné triedy (`class`), definovať konštruktory, deštruktory a metódy.
-- Pracovať s prístupovými právami (`public`, `private`, `protected`).
-- Používať Štandardnú knižnicu šablón (**STL**): `std::vector`, `std::string`, `std::map`.
-- Správne spravovať pamäť pomocou smart pointerov (`std::unique_ptr`, `std::shared_ptr`).
+- Navrhovať vlastné triedy (`class`), definovať konštruktory, deštruktory a metódy.
+- Rozumieť prístupovým právam (`public`, `private`, `protected`) a konštantným metódam (`const`).
+- Efektívne pracovať so STL kontajnermi (`std::vector`, `std::string`, `std::map`) a STL algoritmami.
+- Správne a bezpečne spravovať pamäť pomocou smart pointerov (`std::unique_ptr`, `std::shared_ptr`) a RAII.
+- Rozumieť virtuálnym funkciám (`virtual`), čistým virtuálnym funkciám a abstraktným rozhraniam.
+- Ošetrovať výnimky (`try-throw-catch`) a pracovať so súborovými prúdmi (`std::ifstream`, `std::ofstream`).
 
 ---
 
-## 🛠️ Kompilácia a spustenie
+## 🗺️ Učebná cesta modulu
 
-Pre kompiláciu C++ programov použijeme kompilátor **g++**:
+| Lekcia / Priečinok | Téma | Popis |
+| :--- | :--- | :--- |
+| [`00_Prostredie_a_zaklady/`](./00_Prostredie_a_zaklady/) | Prostredie a Kompilácia C++ | Kompilátor `g++`, štandardy C++17, `std::cout` a `std::cin`. |
+| [`01_Typy_a_vyrazy/`](./01_Typy_a_vyrazy/) | Dátové typy v C++ | Typ `bool`, `auto`, referencie (`&`) a konštanty (`const`). |
+| [`02_Podmienky_a_cykly/`](./02_Podmienky_a_cykly/) | Riadenie toku a Range-for | Podmienky, cykly a moderný `range-based for` cyklus. |
+| [`03_Funkcie_a_referencie/`](./03_Funkcie_a_referencie/) | Referencie a Overloading | Preťažovanie funkcií (*Function Overloading*) a predvolené argumenty. |
+| [`04_String_a_kontajnery/`](./04_String_a_kontajnery/) | STL Kontajnery | Práca so `std::string`, `std::vector` a `std::array`. |
+| [`05_Triedy_a_objekty/`](./05_Triedy_a_objekty/) | Základy Tried | Definícia triedy, objektov, atribútov a metód. |
+| [`06_Enkapsulacia_a_konstruktory/`](./06_Enkapsulacia_a_konstruktory/) | Enkapsulácia a Konštruktory | Konštruktory, deštruktory, explicitná inicializácia a zapuzdrenie. |
+| [`07_Dedicnost_a_polymorfizmus/`](./07_Dedicnost_a_polymorfizmus/) | Dedičnosť a Polymorfizmus | Odvodené triedy, `virtual` metódy, `override` a abstraktné triedy. |
+| [`08_STL_a_algoritmy/`](./08_STL_a_algoritmy/) | STL Algoritmy a Lambda | Iterátory, `std::sort`, `std::find_if` a lambda výrazy. |
+| [`09_Vynimky_a_subory/`](./09_Vynimky_a_subory/) | Výnimky a Fstream | Ošetrenie chýb cez výnimky (`std::exception`) a práca so súbormi. |
+| [`10_Pamat_a_RAII/`](./10_Pamat_a_RAII/) | RAII a Smart Pointers | Princíp RAII, `std::unique_ptr` a `std::shared_ptr`. |
+| [`11_Testovanie_a_build/`](./11_Testovanie_a_build/) | Build a Cmake | Organizácia väčších projektov v C++. |
+| [`cvicenia/`](./cvicenia/) | Cvičenia | Úlohy na procvičenie OOP v C++. |
+| [`projekty/`](./projekty/) | Miniprojekt | *Objektový Systém Riadenia Mechatronického Bota (Robot Controller)*. |
+
+---
+
+## 📺 Odporúčané študijné zdroje
+
+- 🌐 **W3Schools**: [C++ Tutorial](https://www.w3schools.com/cpp/)
+- 📖 **Autoritatívna C++ Referencia**: [cppreference.com - C++ Reference](https://en.cppreference.com/w/cpp)
+- 🎓 **Kompletný C++ Tutoriál**: [learncpp.com](https://www.learncpp.com/)
+
+---
+
+## 🛠️ Kompilácia a Spustenie
+
+Na kompiláciu použite kompilátor `g++` so štandardom **C++17**:
 
 ```bash
-# Kompilácia s podporou štandardu C++17
-g++ -Wall -std=c++17 main.cpp -o main
+# Kompilácia
+g++ -std=c++17 -Wall -Wextra main.cpp -o main
 
 # Spustenie
 ./main          # Linux / macOS
@@ -29,39 +62,46 @@ main.exe        # Windows
 
 ---
 
-## 💻 Ukážka kódu
-
-Súbor [`main.cpp`](./main.cpp) demonštruje triedu, konštruktor a metódy v C++:
+## 💻 Štartovací kód (Smart Pointers a Polymorfizmus)
 
 ```cpp
 #include <iostream>
+#include <vector>
+#include <memory>
 #include <string>
 
-class Senzor {
-private:
+class Zariadenie {
+protected:
     std::string nazov;
-    double hodnota;
-
 public:
-    Senzor(const std::string& n) : nazov(n), hodnota(0.0) {}
+    Zariadenie(std::string n) : nazov(std::move(n)) {}
+    virtual ~Zariadenie() = default;
 
-    void nastavitHodnotu(double h) { hodnota = h; }
-    void vypis() const {
-        std::cout << "Senzor " << nazov << ": " << hodnota << std::endl;
+    virtual void spusti() const = 0; // Čistá virtuálna metóda
+};
+
+class Motor : public Zariadenie {
+public:
+    Motor(std::string n) : Zariadenie(std::move(n)) {}
+    void spusti() const override {
+        std::cout << "[MOTOR] " << nazov << " štartuje otáčky...\n";
     }
 };
+
+int main() {
+    std::vector<std::unique_ptr<Zariadenie>> zariadenia;
+    zariadenia.push_back(std::make_unique<Motor>("Krokový Motor X"));
+    zariadenia.push_back(std::make_unique<Motor>("DC Motor Y"));
+
+    for (const auto& z : zariadenia) {
+        z->spusti();
+    }
+    return 0;
+}
 ```
 
 ---
 
-## 📚 Odporúčané študijné zdroje
+## 🏁 Pokračovanie v štúdiu
 
-- [cppreference.com - C++ reference](https://en.cppreference.com/w/cpp)
-- [learncpp.com - Free C++ Tutorials](https://www.learncpp.com/)
-
----
-
-## 📝 Cvičenia a úlohy
-
-1. **Úloha 1:** Vytvorte základnú triedu `Vozidlo` a odvodene triedy `Automobil` a `Motocykel`. Implementujte virtuálnu metódu `vypisInformacie()`.
-2. **Úloha 2:** Použite `std::vector<Vozidlo*>` na uloženie rôznych typov vozidiel a demonštrujte polymorfizmus pri prechádzaní zoznamu.
+Po zvládnutí C++ pokračujte záverečným modulom [`04_Win32_API`](../04_Win32_API/), kde prejdete k vývoju okenných desktopových aplikácií pre operačný systém Windows.
