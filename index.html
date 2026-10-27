@@ -1,77 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programovanie – Výučbové Kurzy</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Výučbové materiály z programovania: Python, C/C++ a Win32 API.">
+  <title>Programovanie | Výučbové materiály</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --surface: #fff;
+      --text: #1c2330;
+      --muted: #5b6678;
+      --accent: #1f6feb;
+      --border: #d9dee7;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        color-scheme: dark;
+        --bg: #101827;
+        --surface: #182437;
+        --text: #edf3fc;
+        --muted: #b4c2d6;
+        --accent: #83c5ff;
+        --border: #2b3b52;
+      }
+    }
+    :root[data-theme="light"] { color-scheme: light; }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #101827;
+      --surface: #182437;
+      --text: #edf3fc;
+      --muted: #b4c2d6;
+      --accent: #83c5ff;
+      --border: #2b3b52;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: radial-gradient(ellipse at 50% -20%, #27466b 0, var(--bg) 58%);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    .page { width: min(100% - 2rem, 1100px); margin-inline: auto; }
+    header { padding: clamp(4rem, 12vw, 8rem) 0 3rem; text-align: center; }
+    .eyebrow { color: var(--accent); font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: .6rem 0; font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.1; letter-spacing: -.04em; }
+    header p { max-width: 600px; margin: 1rem auto 0; color: var(--muted); font-size: 1.1rem; }
+    h2 { margin: 0 0 1.25rem; font-size: 1.45rem; }
+    .courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 1.25rem; padding-bottom: 4rem; }
+    .course {
+      display: flex;
+      min-width: 0;
+      min-height: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      background: var(--surface);
+      color: inherit;
+      text-decoration: none;
+    }
+    a.course { transition: transform .18s ease, border-color .18s ease; }
+    a.course:hover { transform: translateY(-4px); border-color: var(--accent); }
+    a.course:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .course img, .placeholder-art { display: grid; width: 100%; height: 220px; place-items: center; background: #fff; object-fit: cover; }
+    .placeholder-art { background: linear-gradient(135deg, #1d3557, #101827); color: #fff; font-size: clamp(2rem, 8vw, 4rem); font-weight: 800; letter-spacing: -.06em; }
+    .course-content { display: flex; flex: 1; flex-direction: column; padding: 1.4rem; }
+    .tag { color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .course h2 { margin: .45rem 0; font-size: 1.6rem; }
+    .course p { margin: 0 0 1.25rem; color: var(--muted); }
+    .open { margin-top: auto; color: var(--accent); font-weight: 700; }
+    .coming-soon { opacity: .88; }
+    .coming-soon .tag { color: var(--muted); }
+    footer { padding: 1rem 0 2rem; border-top: 1px solid var(--border); color: var(--muted); text-align: center; font-size: .9rem; }
+    footer a { color: inherit; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Programovanie a Vývoj Softvéru</h1>
-            <p>Interaktívny vzdelávací portál pre stredné odborné školy. Vyberte si kurz a začnite študovať od základov verzionovania až po desktopové aplikácie.</p>
-        </header>
+  <div class="page">
+    <header>
+      <div class="eyebrow">Výučbové materiály</div>
+      <h1>Programovanie</h1>
+      <p>Vyber si kurz a objavuj programovanie krok za krokom.</p>
+    </header>
 
-        <main>
-            <div class="grid">
-                <!-- 1. Karta Git -->
-                <div class="card">
-                    <div class="card-header-img git">
-                        Git
-                    </div>
-                    <div class="card-body">
-                        <span class="badge git">Kurz je dostupný</span>
-                        <h2 class="card-title">Git & Verzovanie</h2>
-                        <p class="card-text">Úvod do správy verzií, inštalácia, commity, vetvy, riešenie konfliktov a práca s GitHubom.</p>
-                        <a href="git.html" class="card-btn">Otvoriť kurz Gitu &rarr;</a>
-                    </div>
-                </div>
+    <main>
+      <section class="courses" aria-label="Programovacie kurzy">
+        <a class="course" href="python.html">
+          <img src="img/Vitajte%20v%20programovan%C3%AD%20v%20Pythone.png" alt="Vitajte v programovaní v Pythone" width="1536" height="1024">
+          <div class="course-content">
+            <span class="tag">Kurz je dostupný</span>
+            <h2>Python</h2>
+            <p>Výučbové materiály, prednášky, videá a testy z Pythonu a algoritmizácie.</p>
+            <span class="open">Otvoriť kurz <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
 
-                <!-- 2. Karta Python -->
-                <div class="card">
-                    <div class="card-header-img python">
-                        Python
-                    </div>
-                    <div class="card-body">
-                        <span class="badge python">Kurz je dostupný</span>
-                        <h2 class="card-title">Python</h2>
-                        <p class="card-text">Základy syntaxe, algoritmizácia, dátové štruktúry, funkcie, súbory a objektovo orientované programovanie.</p>
-                        <a href="python.html" class="card-btn">Otvoriť kurz Pythonu &rarr;</a>
-                    </div>
-                </div>
+        <a class="course" href="git.html">
+          <img src="img/git-course.svg" alt="Vetvy a commity v repozitári Git" width="1200" height="700">
+          <div class="course-content">
+            <span class="tag">Kurz je dostupný</span>
+            <h2>Git</h2>
+            <p>Verzovanie kódu: úvod do Gitu, commity, vetvy a správa zmien v repozitári.</p>
+            <span class="open">Otvoriť kurz Gitu <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
 
-                <!-- 3. Karta C / C++ -->
-                <div class="card">
-                    <div class="card-header-img c-cpp">
-                        C / C++
-                    </div>
-                    <div class="card-body">
-                        <span class="badge c-cpp">Materiály a testy</span>
-                        <h2 class="card-title">C / C++</h2>
-                        <p class="card-text">Procedurálne programovanie v jazyku C, ukazovatele, práca s pamäťou a pokročilé OOP v C++.</p>
-                        <a href="c-cpp.html" class="card-btn">Otvoriť kurz C / C++ &rarr;</a>
-                    </div>
-                </div>
+        <a class="course" href="c-cpp.html">
+          <div class="placeholder-art" aria-hidden="true">C/C++</div>
+          <div class="course-content">
+            <span class="tag">Materiály a test</span>
+            <h2>C/C++</h2>
+            <p>Základy jazyka C, interaktívny test a pripravované témy jazyka C++.</p>
+            <span class="open">Otvoriť C/C++ <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
 
-                <!-- 4. Karta Win32 API -->
-                <div class="card">
-                    <div class="card-header-img win32">
-                        Win32
-                    </div>
-                    <div class="card-body">
-                        <span class="badge win32">Desktop GUI</span>
-                        <h2 class="card-title">Win32 API</h2>
-                        <p class="card-text">Tvorba natívnych desktopových okenných aplikácií pre OS Windows, správová smyčka, WndProc a GDI.</p>
-                        <a href="win32-api.html" class="card-btn">Otvoriť kurz Win32 API &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </main>
+        <article class="course coming-soon" aria-label="Kurz Win32 API, pripravujeme">
+          <div class="placeholder-art" aria-hidden="true">Win32</div>
+          <div class="course-content">
+            <span class="tag">Pripravujeme</span>
+            <h2>Win32 API</h2>
+            <p>Materiály k tvorbe aplikácií pre Windows pomocou Win32 API doplníme neskôr.</p>
+            <a class="open" href="https://github.com/cabalad/Programovanie/tree/main/04_Win32_API">Osnova na GitHube <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </section>
+    </main>
 
-        <footer>
-            <p>&copy; Študijný repozitár Programovanie | Zdroje integrované z kanála <a href="https://www.youtube.com/@InformatikasMi%C5%A1om" target="_blank">Informatika s Mišom</a></p>
-        </footer>
-    </div>
+    <footer>Výučbové materiály z programovania · <a href="nastavenia.html">Nastavenia vzhľadu</a></footer>
+  </div>
+  <script src="theme.js"></script>
 </body>
 </html>
